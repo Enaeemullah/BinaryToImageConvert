@@ -3,10 +3,10 @@ const path = require('path');
 const { fetchImageData } = require('./config');
 const { processImage } = require('./imageProcessor');
 
-const outputFolder = 'D:KCBL-Migration/KCBL-Signature/SignatureImages';
+const outputFolder = 'D:\\DMPro\\KCBL-Migration\\KCBL-Signatures';
 const imageWidth = 400;
 const imageHeight = 200;
-const compressionQuality = 100; // Adjust this value as needed (between 1 and 100)
+const compressionQuality = 100;
 
 async function main() {
   try {
