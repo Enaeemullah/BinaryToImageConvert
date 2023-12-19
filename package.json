@@ -4,6 +4,7 @@
   "description": "The Binary Image Migration Utility is a versatile tool designed to simplify the process of migrating binary image data stored in JPEG format between various data sources or file systems. This utility provides a seamless way to extract, transform, and load binary images, ensuring that your image data is preserved and accessible in its new location.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Naeem Ullah",
@@ -12,6 +13,8 @@
     "chalk": "^5.3.0",
     "dotenv": "^16.3.1",
     "kleur": "^4.1.5",
+    "mongodb": "^6.2.0",
+    "mssql": "^10.0.1",
     "mysql2": "^3.6.2",
     "sharp": "^0.32.6"
   }

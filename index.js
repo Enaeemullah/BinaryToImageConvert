@@ -1,12 +1,12 @@
-const fs = require('fs').promises; // Import the fs module for file operations
+const fs = require('fs').promises;
 const path = require('path');
 const { fetchImageData } = require('./config');
 const { processImage } = require('./imageProcessor');
 
-// const outputFolder = process.env.OUTPUT_FOLDER;
-const outputFolder = 'F:/KCBL-SIGNATURE/SignatureImages';
-const imageWidth = 400; // Change to the desired width
-const imageHeight = 200; // Change to the desired height
+const outputFolder = 'D:KCBL-Migration/KCBL-Signature/SignatureImages';
+const imageWidth = 400;
+const imageHeight = 200;
+const compressionQuality = 100; // Adjust this value as needed (between 1 and 100)
 
 async function main() {
   try {
@@ -18,7 +18,7 @@ async function main() {
     let startingCustomerID = 1;
 
     for (const { Customer_ID, Signature } of imageData) {
-      await processImage(Customer_ID, Signature, outputFolder, imageWidth, imageHeight);
+      await processImage(Customer_ID, Signature, outputFolder, imageWidth, imageHeight, compressionQuality);
 
       if (Customer_ID !== startingCustomerID) {
         startingCustomerID = Customer_ID;

@@ -7,6 +7,7 @@ const dbConfig = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
+  server: process.env.DB_SERVER
 };
 
 async function connectToDatabase() {
@@ -15,7 +16,8 @@ async function connectToDatabase() {
 
 async function fetchImageData() {
   const connection = await connectToDatabase();
-  const query = 'SELECT Customer_ID, Signature FROM signaturephoto ORDER BY Customer_ID';
+  // const query = 'SELECT Customer_ID, Signature FROM signaturephoto ORDER BY Customer_ID';
+  const query = 'SELECT DISTINCT Customer_ID, Signature FROM SignaturePhoto ORDER BY Customer_ID';
   const [rows] = await connection.execute(query);
   await connection.end();
 
